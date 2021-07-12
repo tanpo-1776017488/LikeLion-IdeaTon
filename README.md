@@ -30,19 +30,37 @@
 
 ## my work
 * bootstrap 흰색 버튼 삭제
-* 위의 빈 공간 삭제
+* nav-bar와 form-wrap 사이의 빈 공간 삭제
 * 아래 공간 삭제
 * pagination 구현
 * url 연결
 * javascript를 사용한 이벤트 제어
-* kakao map api 사용
+* kakao map api 사용   
+* 메뉴 선택 이벤트 추가(jQuery,js)    
+
 
 ## results
 ### login page
 <img src='results/login.png'>   
 
 ### location page    
-<img src='results/location.png'>
+<img src='results/location.png'>   
+
+### mainmenu page   
+<img src='results/mainmenu.png'>   
 
 ### main page     
 <img src='results/main.png'>   
+
+### menu selection page   
+<img src='results/menulist.png'>   
+
+### 결제창   
+<img src='results/payment.png'>   
+
+### 내가 만들기   
+<img src='results/make_menu.png'>   
+
+### 내가 만들기 결제창   
+<img src='results/make_menu_payment.png'>   
+
