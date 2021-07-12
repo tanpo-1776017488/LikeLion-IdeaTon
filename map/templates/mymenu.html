@@ -1,0 +1,257 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="{% static 'admin/css/animate.min.css'%}" rel="stylesheet">
+    <link href="{% static 'admin/css/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>mymainhome</title>
+    <link rel="stylesheet" href="{% static 'admin/css/mymenu_style.css'%}">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Khula:400,700');
+
+    </style>
+    <script language='javascript'>
+        function loaded()
+        {
+            document.all.loading.style.display='none';
+            document.all.wrap.style.display='block';
+        }
+    </script>
+</head>
+<body class="page" onload='loaded()'>
+    <div id="loading" runat="server" style="position:absolute;left:50%;top:50%;margin-top:-140px;margin-left:-250px;DISPLAY: block;text-align:center;">
+        <img src="{% static 'admin/gif/load.gif'%}" width="500" height="250" border="0">
+        <br><br>
+        
+    </div>
+        <!-- Nav Bar Start -->
+    <div id="wrap" runat="server" style="DISPLAY:none">
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="{% url 'mainmenu'%}" class="navbar-brand">달밤의 배달
+                    <img src="{% static 'admin/img/logob.png'%}" style ="margin-left: -5%; margin-bottom: 1%;">
+                </a>
+                <!-- <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse"></div>
+                    <a href="{% url 'location'%}" class="nav-location">영남대학교 IT관 <i class="far fa-check-circle"style="color:#000000; font-weight:bold;"></i></a>
+                    <a href="{% url 'login'%}" class="nav-link"><i class="fas fa-user-circle" style="color:#000000; font-size:40px;" ></i></a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Nav Bar End -->
+
+    <div class = "form-wrap">
+    <div id="content"></div>
+        <script src="{% static 'admin/js/buttonstrip.min.js'%}"></script>
+        <script>
+            var bs1 = new ButtonStrip({
+                id: 'buttonStrip1'
+            });
+            bs1.addButton('여럿이서', true, 'click', function(){
+                console.log('Hallo Welt!');
+            });
+            bs1.addButton('혼자서', false, 'click', function(){
+                console.log('Test');
+            });
+            bs1.append('#content');
+        </script>
+        <br>
+    <div class="new-menu">내가 만들기</div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <div id="menu-food">
+        <ul>
+            <h6><a>한식</a></h6>
+            <h6><a>분식</a></h6>
+            <h6><a>일식</a></h6>
+            <h6><a>중식</a></h6>
+            <h6><a>양식</a></h6>
+            <h6 id='default_select'><a>치킨</a></h6>
+            <h6><a>피자</a></h6>
+
+        </ul>
+        
+    </div><br><br>
+    <hr style="border: solid 1px rgb(133, 133, 133); color: rgb(133, 133, 133);width: 90%; margin: auto;">
+    <hr style="border: solid 2px rgb(211, 211, 211); color: rgb(211, 211, 211);width: 89.5%; margin: auto;margin-bottom: -15px;">
+    <div id="menu-choose">
+        <ul>
+            <h6><a>기본순</a></h6>
+            <h6 id='default_select_sub'><a>주문 많은 순</a></h6>
+            <h6><a>별점 높은 순</a></h6>
+            <h6><a>찜 많은 순</a></h6>
+            <h6><a>배달팁 낮은 순</a></h6>
+        </ul>
+    </div>
+   
+
+    <ul class="mylist">
+        <div class="card"  >
+            <div class="card-body">
+                <img src="https://lh3.googleusercontent.com/proxy/WmQYgIN99FwNo7u7ZzD5VjFPDPsS4FF8QcdiOqgdXi4v3SEIjWxe5Z6dYnm7k7NAdE1ba2sUcWud8hPEdw3NonbfhkvCsYf7RcSizla9hqDLj6IGm7VvkWtL1UrPdA8A"  border="1" align="left" vspace="10" hspace="10"class="img-fluid" style="max-width:130px; height: 80px; border-radius: 5px; border-color: rgb(177, 177, 177); margin: 0px 10px 0px 2px;">
+                <div class="card-market" style="float: left;"><b>BHC 영남대점</b></div>
+                <br>
+                <img src="{% static 'admin/img/star.png'%}" vspace="1" hspace="1" align="left" class="img-fluid" style="max-width:16px; height:auto;">
+                <div style="float:left; font-size: 13px;"><b>5.0</b>(100+) 하바네로 포테킹 후라이드+치즈볼, 뿌링클콤보+치즈볼</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>최소주문금액</b> 17000원</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>배달팁</b> 3000원</div>
+                <div class="button"style="float:right">
+                    <a href="#" class="btn btn-warning">주문하기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card"  >
+            <div class="card-body">
+                <img src="https://siksamenu.co.kr/images/thumbnail/105367315.jpg"  border="1" align="left" vspace="10" hspace="10"class="img-fluid" style="max-width:130px; height:80px; border-radius: 5px; border-color: rgb(177, 177, 177); margin: 0px 10px 0px 2px;">
+                <div class="card-market" style="float: left;"><b>굽네치킨 옥산정평점</b></div>
+                <br>
+                <img src="{% static 'admin/img/star.png'%}" vspace="1" hspace="1" align="left" class="img-fluid" style="max-width:16px; height:auto;">
+                <div style="float:left; font-size: 13px;"><b>4.9</b>(100+) 굽네 고추바사삭, 굽네 갈릭마왕 반반</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>최소주문금액</b> 15000원</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>배달팁</b> 2000원</div>
+                <div class="button"style="float:right">
+                    <a href="#" class="btn btn-warning">주문하기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card"  >
+            <div class="card-body">
+                <img src="https://blog.kakaocdn.net/dn/b5dGDC/btqwTxyB3SZ/FNbo7uzSBdCF7VVGFJTdNk/img.jpg"  border="1" align="left" vspace="10" hspace="10"class="img-fluid" style="max-width:130px; height:80px; border-radius: 5px; border-color: rgb(177, 177, 177); margin: 0px 10px 0px 2px;">
+                <div class="card-market" style="float: left;"><b>교촌치킨 영대점</b></div>
+                <br>
+                <img src="{% static 'admin/img/star.png'%}" vspace="1" hspace="1" align="left" class="img-fluid" style="max-width:16px; height:auto;">
+                <div style="float:left; font-size: 13px;"><b>4.2</b>(100+) 교촌발사믹치킨, 교촌치즈트러플순살</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>최소주문금액</b> 15000원</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>배달팁</b> 3000원</div>
+                <div class="button"style="float:right">
+                    <a href="#" class="btn btn-warning">주문하기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card"  >
+            <div class="card-body">
+                <img src="https://blog.kakaocdn.net/dn/bIHZY9/btqOzB6DG4H/BnOgRoUGdOJW1KjPyDqVlk/img.png"  border="1" align="left" vspace="10" hspace="10"class="img-fluid" style="max-width:130px; height:80px; border-radius: 5px; border-color: rgb(177, 177, 177); margin: 0px 10px 0px 2px;">
+                <div class="card-market" style="float: left;"><b>노랑통닭 사동점</b></div>
+                <br>
+                <img src="{% static 'admin/img/star.png'%}" vspace="1" hspace="1" align="left" class="img-fluid" style="max-width:16px; height:auto;">
+                <div style="float:left; font-size: 13px;"><b>4.9</b>(100+) 맵싸한 고추치킨, 알싸한 마늘치킨</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>최소주문금액</b> 18000원</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>배달팁</b> 1000원</div>
+                <div class="button"style="float:right">
+                    <a href="#" class="btn btn-warning">주문하기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <img src="https://post-phinf.pstatic.net/MjAyMDAyMTdfMTIg/MDAxNTgxOTIwNTg3ODE4.eGCjPHARoJV2TjRSTYeEf6ZbsnhLqwRSx2n8-Frd6EAg.BIE61iBQzLnNjf9vBRfhYAzuZTCWRW0D0zlo7bil854g.JPEG/342594_240617_351.jpg?type=w1200"  border="1" align="left" vspace="10" hspace="10"class="img-fluid" style="max-width:130px; height:auto; border-radius: 5px; border-color: rgb(177, 177, 177); margin: 0px 10px 0px 2px;">
+                <div class="card-market" style="float: left;"><b>60계치킨 경산정평점</b></div>
+                <br>
+                <img src="{% static 'admin/img/star.png'%}" vspace="1" hspace="1" align="left" class="img-fluid" style="max-width:16px; height:auto;">
+                <div style="float:left; font-size: 13px;"><b>4.8</b>(100+) (인기)고추치킨, (인기) 간지치킨</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>최소주문금액</b> 16900원</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>배달팁</b> 2500원</div>
+                <div class="button"style="float:right">
+                    <a href="#" class="btn btn-warning">주문하기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card" style=  >
+            <div class="card-body">
+                <img src="https://mblogthumb-phinf.pstatic.net/MjAxNzA1MjlfNzEg/MDAxNDk2MDM5NzMwNzY4.ZVarzDFKnq2_BIWh0W7vzeyupGUjPMXT27RriAaRYKMg.WYOBevskBDFCHgAIeW5cKSMmNYAUw4BGBt7h9z678p4g.JPEG.m25m25/%ED%91%B8%EB%9D%BC%EB%8B%A5.JPG?type=w800"  border="1" align="left" vspace="10" hspace="10"class="img-fluid" style="max-width:130px; height:auto; border-radius: 5px; border-color: rgb(177, 177, 177); margin: 0px 10px 0px 2px;">
+                <div class="card-market" style="float: left;"><b>푸라닭 시지점</b></div>
+                <br>
+                <img src="{% static 'admin/img/star.png'%}" vspace="1" hspace="1" align="left" class="img-fluid" style="max-width:16px; height:auto;">
+                <div style="float:left; font-size: 13px;"><b>4.9</b>(100+) 블랙마요, 블랙투움바</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>최소주문금액</b> 15900원</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>배달팁</b> 3000원</div>
+                <div class="button"style="float:right">
+                    <a href="{% url 'mymenulist'%}" class="btn btn-warning">주문하기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card" style=>
+            <div class="card-body">
+                <img src="https://static.wixstatic.com/media/0cd26d_97e9f5a16afb4bbf80fe030669d156e7.png/v1/fill/w_391,h_186,al_c,q_85,usm_0.66_1.00_0.01/0cd26d_97e9f5a16afb4bbf80fe030669d156e7.webp"  border="1" align="left" vspace="10" hspace="10"class="img-fluid" style="max-width:130px; height:80px; border-radius: 5px; border-color: rgb(177, 177, 177); margin: 0px 10px 0px 2px;">
+                <div class="card-market" style="float: left;"><b>치코 파닭 경산점</b></div>
+                <br>
+                <img src="{% static 'admin/img/star.png'%}" vspace="1" hspace="1" align="left" class="img-fluid" style="max-width:16px; height:auto;">
+                <div style="float:left; font-size: 13px;"><b>5.0</b>(100+) 1마리 파닭 (선택), 2마리 파닭 (선택)</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>최소주문금액</b> 15000원</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>배달팁</b> 1000원</div>
+                <div class="button"style="float:right">
+                    <a href="#" class="btn btn-warning">주문하기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card" style=  >
+            <div class="card-body">
+                <img src="https://blog.kakaocdn.net/dn/bYxk8F/btqzbVdZXnU/eDGWNmlponKBAabI83n5K0/img.jpg"  border="1" align="left" vspace="10" hspace="10"class="img-fluid" style="max-width:130px; height:80PX; border-radius: 5px; border-color: rgb(177, 177, 177); margin: 0px 10px 0px 2px;">
+                <div class="card-market" style="float: left;"><b>BBQ 경산임당점</b></div>
+                <br>
+                <img src="{% static 'admin/img/star.png'%}" vspace="1" hspace="1" align="left" class="img-fluid" style="max-width:16px; height:auto;">
+                <div style="float:left; font-size: 13px;"><b>5.0</b>(100+) 핫 황금올리브 레드착착, 핫 황금올리브 블랙패퍼</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>최소주문금액</b> 15000원</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>배달팁</b> 3000원</div>
+                <div class="button"style="float:right">
+                    <a href="#" class="btn btn-warning">주문하기</a>
+                </div>
+            </div>
+        </div>
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+          </div>
+    </ul>
+    </div>
+            <!-- JavaScript Libraries -->
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+            <script src="{% static 'admin/js/easing.min.js'%}"></script>
+            <script src="{% static 'admin/js/owl.carousel.min.js'%}"></script>
+            <script src="{% static 'admin/js/waypoints.min.js'%}"></script>
+            <script src="{% static 'admin/js/counterup.min.js'%}"></script>
+            
+
+    
+            <!-- Template Javascript -->
+            <script src="{% static 'admin/js/main.js'%}"></script>
+</div>
+        </body>
+
+</html>

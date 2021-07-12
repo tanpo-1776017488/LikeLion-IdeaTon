@@ -1,0 +1,349 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="{% static 'admin/css/animate.min.css'%}" rel="stylesheet">
+    <link href="{% static 'admin/css/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>mainhome</title>
+    <link rel="stylesheet" href="{% static 'admin/css/main_style.css'%}">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Khula:400,700');
+
+    </style>
+    <script language='javascript'>
+        function loaded()
+        {
+            document.all.loading.style.display='none';
+            document.all.wrap.style.display='block';
+        }
+    </script>
+</head>
+<body class="page" onload="loaded()">
+    <div id="loading" runat="server" style="position:absolute;left:50%;top:50%;margin-top:-140px;margin-left:-250px;DISPLAY: block;text-align:center;">
+        <img src="{% static 'admin/gif/load.gif'%}" width="500" height="250" border="0">
+        <br><br>
+        
+    </div>
+        <!-- Nav Bar Start -->
+        <div id="wrap" runat="server" style="DISPLAY:none">
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="{% url 'mainmenu'%}" class="navbar-brand">달밤의 배달
+                    <img src="{% static 'admin/img/logob.png'%}" style ="margin-left: -5%; margin-bottom: 1%;width:38px;">
+                </a>
+                <!-- <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
+                <!-- 흰색 줄?버튼 없앰 -->
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse"></div>
+                    <a href="#" class="nav-location" >영남대학교 IT관 <i class="far fa-check-circle"style="color:#000000; font-weight:bold;"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-user-circle" style="color:#000000; font-size:40px;" ></i></a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Nav Bar End -->
+
+    <div class = "form-wrap">
+    <div id="content"></div>
+        <script src="{% static 'admin/js/buttonstrip.min.js'%}"></script>
+        <script>
+            var bs1 = new ButtonStrip({
+                id: 'buttonStrip1'
+            });
+            bs1.addButton('여럿이서', true, 'click', function(){
+                console.log('Hallo Welt!');
+            });
+            bs1.addButton('혼자서', false, 'click', function(){
+                console.log('Test');
+            });
+            bs1.append('#content');
+        </script>
+        <br>
+    <div class="new-menu">내가 만들기</div>
+    <div id="map" >
+        
+    </div>  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <div id="menu-food" >
+        <ul>
+            <h6 id='sub_menu' onclick='switchMenu()'><a>한식</a></h6>
+            <h6 ><a>분식</a></h6>
+            <h6 ><a>일식</a></h6>
+            <h6 ><a>중식</a></h6>
+            <h6 ><a>양식</a></h6>
+            <h6><a>치킨</a></h6>
+            <h6 ><a>피자</a></h6>
+        </ul>
+        
+    </div><br><br>
+    <hr style="border: solid 1px rgb(133, 133, 133); color: rgb(133, 133, 133);width: 90%; margin: auto;">
+    <hr style="border: solid 2px rgb(211, 211, 211); color: rgb(211, 211, 211);width: 89.5%; margin: auto;margin-bottom: -15px;">
+    <div id="menu-choose">
+        <ul>
+            <h6><a>가까운 순</a></h6>
+            <h6 id='time_til' onclick="switchMenuOrange()"><a>배달 시간 순</a></h6>
+            <h6><a>주문 많은 순</a></h6>
+            <h6><a>별점 높은 순</a></h6>
+            <h6><a>찜 많은 순</a></h6>
+            <h6><a>배달팁 낮은 순</a></h6>
+        </ul>
+    </div>
+   
+
+    <ul class="mylist">
+        <div class="card">
+            <div class="card-body">
+                <img src="http://img1.tmon.kr/cdn3/deals/2021/05/05/929868014/929868014_front_97649_07ec2.jpg" border="1" align="left" vspace="10" hspace="10"class="img-fluid" style="max-width:130px; height:auto; border-radius: 5px;border-color: rgb(177, 177, 177); margin: 0px 10px 0px 2px;">
+                <div class="card-market" style="float: left; "><b>본도시락 경산정평점</b></div>
+                <img src="{% static 'admin/img/deliverpos.png'%}" class="img-fluid" align="right"style="max-width: 23px; height:auto;">
+     
+                <div class="card-time" style="float: right;">17:50 영남대 정문</div>
+                <br>
+                <img src="{% static 'admin/img/star.png'%}" vspace="1" hspace="1" align="left" class="img-fluid" style="max-width:16px; height:auto;">
+                <div style="float:left; font-size: 13px;"><b>5.0</b>(30+) 본주꾸미꽈리닭 한상, 본냉이된장제육덮밥</div>
+                <img src="https://cdn.pixabay.com/photo/2014/04/02/10/54/man-304880_1280.png" class="img-fluid" align="right" hspace="8" style="max-width: 14px; height:auto;">
+                <div class="card-text " style="float:right; font-size: 13px;">소요 거리: 320m</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>남은 시간</b> 20분</div>
+                
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>최소주문금액 </b>10000원/13000원</div>
+                <div class="card-text " style="float:right; font-size: 14px;">3명/4명</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>배달팁 </b>4000원 <i class="fas fa-arrow-right" sy></i> 1000원</div>
+                <div class="button"style="float:right">
+                    <a href="#" class="btn btn-warning">주문하기</a>
+                </div>
+            </div>
+          </div>
+        <div class="card"  >
+            <div class="card-body">
+                <img src="https://scontent-gmp1-1.xx.fbcdn.net/v/t1.6435-9/113631685_1553877141461892_6668198970832213370_n.png?_nc_cat=106&ccb=1-3&_nc_sid=973b4a&_nc_ohc=aBOeBXEmxWkAX8fBhC9&_nc_ht=scontent-gmp1-1.xx&oh=2c8886d3cfb38da5318752cf96b1fd8a&oe=60E061FD" border="1" align="left" vspace="10" hspace="10"class="img-fluid" style="max-width:130px; height:auto;border-radius: 5px;border-color: rgb(177, 177, 177); margin: 0px 10px 0px 2px;">
+                <div class="card-market" style="float: left;"><b>한솥도시락 영남대원룸촌점</b></div>
+                <img src="{% static 'admin/img/deliverpos.png'%}" class="img-fluid" align="right" style="max-width: 23px; height:auto; ">
+                <div class="card-time" style="float: right;">18:00 영남대 기숙사 </div>
+                <br>
+                <img src="{% static 'admin/img/star.png'%}" vspace="1" hspace="1" align="left" class="img-fluid" style="max-width:16px; height:auto;">
+                <div style="float:left; font-size: 13px;"><b>4.9</b>(100+) 한솥 완도 미역국, 한솥 매콤 해물 된장국</div>
+                <img src="https://cdn.pixabay.com/photo/2014/04/02/10/54/man-304880_1280.png" class="img-fluid" align="right" hspace="8" style="max-width: 14px; height:auto;">
+                <div class="card-text " style="float:right; font-size: 13px;">소요 거리: 223m </div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>남은 시간</b> 10분</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>최소주문금액 </b>5800원/8000원</div>
+                <div class="card-text " style="float:right; font-size: 14px;">1명/2명</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>배달팁 </b>3000원 <i class="fas fa-arrow-right" sy></i> 1500원</div>
+                <div class="button"style="float:right">
+                    <a href="{% url 'menulist'%}" class="btn btn-warning">주문하기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card"  >
+            <div class="card-body">
+                <img src="https://cdn.imweb.me/upload/S202101044762d402002b1/1672c6224036a.png" border="1" align="left" vspace="10" hspace="10"class="img-fluid" style="max-width:130px; height:auto;border-radius: 5px; border-color: rgb(177, 177, 177);margin: 0px 10px 0px 2px; " >
+                <div class="card-market" style="float: left;"><b>핵밥 영대점</b></div>
+                <img src="{% static 'admin/img/deliverpos.png'%}" class="img-fluid" align="right" style="max-width: 23px; height:auto; ">
+                <div class="card-time" style="float: right;">18:30 영남대 기계관 </div>
+                <br>
+                <img src="{% static 'admin/img/star.png'%}" vspace="1" hspace="1" align="left" class="img-fluid" style="max-width:16px; height:auto;">
+                <div style="float:left; font-size: 13px;"><b>3.7</b>(80+) 스테이크덮밥, 고기듬뿍덮밥</div>
+                <img src="https://cdn.pixabay.com/photo/2014/04/02/10/54/man-304880_1280.png" class="img-fluid" align="right" hspace="8" style="max-width: 14px; height:auto;">
+                <div class="card-text " style="float:right; font-size: 13px;">소요 거리: 430m </div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>남은 시간</b> 4분</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>최소주문금액 </b>8900원/15000원</div>
+                <div class="card-text " style="float:right; font-size: 14px;">2명/3명</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>배달팁 </b>3000원 <i class="fas fa-arrow-right" sy></i> 1000원</div>
+                <div class="button"style="float:right">
+                    <a href="#" class="btn btn-warning">주문하기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card"  >
+            <div class="card-body">
+                <img src="https://modo-phinf.pstatic.net/20200104_21/1578108138615ssYNl_JPEG/mosaVmwQqu.jpeg?type=f320_320"  border="1" align="left" vspace="10" hspace="10"class="img-fluid" style="max-width:130px; height:auto; border-radius: 5px; border-color: rgb(177, 177, 177); margin: 0px 10px 0px 2px;">
+                <div class="card-market" style="float: left;"><b>합성동돼지국밥 시지점</b></div>
+                <img src="{% static 'admin/img/deliverpos.png'%}" class="img-fluid" align="right" style="max-width: 23px; height:auto; ">
+                <div class="card-time" style="float: right;">19:00 천마아트센터  </div>
+                <br>
+                <img src="{% static 'admin/img/star.png'%}" vspace="1" hspace="1" align="left" class="img-fluid" style="max-width:16px; height:auto;">
+                <div style="float:left; font-size: 13px;"><b>3.7</b>(80+) 돼지국밥, 순대국밥</div>
+                <img src="https://cdn.pixabay.com/photo/2014/04/02/10/54/man-304880_1280.png" class="img-fluid" align="right" hspace="8" style="max-width: 14px; height:auto;">
+                <div class="card-text " style="float:right; font-size: 13px;">소요 거리: 130m </div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>남은 시간</b> 23분</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>최소주문금액 </b>7500원/14000원</div>
+                <div class="card-text " style="float:right; font-size: 14px;">1명/2명</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>배달팁 </b>3000원 <i class="fas fa-arrow-right" sy></i> 1500원</div>
+                <div class="button"style="float:right">
+                    <a href="#" class="btn btn-warning">주문하기</a>
+                </div>
+            </div>
+        </div>
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+          </div>
+    </ul>
+    
+    </div>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="{% static 'admin/js/easing.min.js'%}"></script>
+        <script src="{% static 'admin/js/owl.carousel.min.js'%}"></script>
+        <script src="{% static 'admin/js/waypoints.min.js'%}"></script>
+        <script src="{% static 'admin/js/counterup.min.js'%}"></script>
+            
+        <!-- Template Javascript -->
+        <script src="{% static 'admin/js/main.js'%}"></script>
+
+        <!-- kakao map api -->
+        <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6bd54180018d8f7825791aa6f9ebb0aa&libraries=services"></script>
+        <script>
+            // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
+            var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+            var myposImg="{% static 'admin/img/mypos.png'%}";
+            var deliverImg="{% static 'admin/img/deliverpos.png'%}";
+            var centerPos=new kakao.maps.LatLng(37.566826, 126.9786567);
+            var userLevel=5;
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                mapOption = 
+                {
+                    center: centerPos, // 지도의 중심좌표
+                    level: userLevel // 지도의 확대 레벨
+                };  
+            // 지도를 생성합니다    
+            var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+            //marking infomation
+            var keyWord=['영남대역 2번출구','영남대학교 기숙사','영남대학교 기계관','영남대학교 천마아트센터','영남대학교 상경관','영남대학교 중앙도서관','영남대학교 과학도서관','경산임당호반베르디움','영남대학교 화공관','영남대학교 정보통신연구소'
+                            ,'영남대학교 대학본부본관','영남대학교 로봇관','경산 서요양병원','cu 영남대서문점','영남대학교 인문관'];
+            var ps = new kakao.maps.services.Places(); 
+            ps.keywordSearch('영남대학교 it관',setCenterPos);
+
+            var zoomControl=new kakao.maps.ZoomControl();
+            map.addControl(zoomControl,kakao.maps.ControlPosition.RIGHT);   
+
+            function setCenterPos(data, status, pagination)
+            {
+                if(status==kakao.maps.services.Status.OK)
+                {
+                    var pos=new kakao.maps.LatLng(data[0].y, data[0].x);
+                    map.setCenter(pos);
+                    //alert("여기까지 했음");
+                    displayMarker(data[0],false);
+                    
+                    makeMark(keyWord);
+                }
+            }
+            function markeyword(data, status, pagination)
+            {
+                if(status==kakao.maps.services.Status.OK)
+                {
+                    var pos=new kakao.maps.LatLng(data[0].y, data[0].x);
+                    displayMarker(data[0],true);
+                }
+            }
+            
+            function makeMark(key)
+            {
+                for(var i=0;i<key.length;i++)
+                {
+                    //alert('진입');
+                    ps.keywordSearch(key[i],markeyword);
+                    
+                }
+              
+          
+            }
+            // 지도에 마커를 표시하는 함수입니다
+            function displayMarker(place,flag) 
+            {
+                
+                // 마커를 생성하고 지도에 표시합니다
+                var marker = new kakao.maps.Marker({
+                    map: map,
+                    //position: new kakao.maps.LatLng(place.y, place.x) 
+                });
+                
+                if(flag)
+                {
+                    var markerImage = new kakao.maps.MarkerImage(deliverImg,new kakao.maps.Size(31, 35), new kakao.maps.Point(13, 34));
+                    marker.setImage(markerImage);
+                    
+                }
+                else
+                { 
+                    var markerImage = new kakao.maps.MarkerImage(myposImg,new kakao.maps.Size(31, 35), new kakao.maps.Point(13, 34));
+                    marker.setImage(markerImage);
+                }
+                marker.setPosition(new kakao.maps.LatLng(place.y, place.x) );
+                
+                // 마커에 클릭이벤트를 등록합니다
+                kakao.maps.event.addListener(marker, 'click', function() 
+                {
+                    // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+                    infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+                    infowindow.open(map, marker);
+                });
+            }
+            </script>
+
+            <!-- menu selection control -->
+            <script>
+                function switchMenu()
+                {
+                    var menu=document.getElementsById('sub_menu');
+                    if(menu.style.textDecoration=='none')
+                    {
+                        menu.style.textDecoration='underline';
+                        menu.style.fontWeight='bold';
+                    }
+                    else
+                    {
+                        menu.style.textDecoration='none';
+                    }
+                   // alert('button');
+                }
+                function switchMenuOrange()
+                {
+                    var menu=document.getElementById('time_til');
+                    alert(menu.style.backgroundColor);
+                    if(menu.style.backgroundColor=="#f8e15f")
+                    {
+                        menu.style.backgroundColor='white';
+                    }
+                    else
+                    {
+                        menu.style.backgroundColor="#f8e15f";
+                        menu.style.borderRadius="30px";
+                    }
+                }
+            </script>
+        
+</body>
+
+</html>

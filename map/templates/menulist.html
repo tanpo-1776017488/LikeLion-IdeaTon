@@ -1,0 +1,505 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="{% static 'admin/css/animate.min.css'%}" rel="stylesheet">
+    <link href="{% static 'admin/css/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>menulist</title>
+    <link rel="stylesheet" href="{% static 'admin/css/menulist_style.css'%}">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Khula:400,700');
+
+    </style>
+    <script language='javascript'>
+        function loaded()
+        {
+            document.all.loading.style.display='none';
+            document.all.wrap.style.display='block';
+        }
+    </script>
+
+</head>
+<body class="page" onload='loaded()'>
+        <!-- loading -->
+        <div id="loading" runat="server" style="position:absolute;left:50%;top:50%;margin-top:-140px;margin-left:-250px;DISPLAY: block;text-align:center;">
+            <img src="{% static 'admin/gif/load.gif'%}" width="500" height="250" border="0">
+            <br><br>
+            
+        </div>
+        <!-- Nav Bar Start -->
+        <div id="wrap" runat="server" style="DISPLAY:none">
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="{% url 'mainmenu'%}" class="navbar-brand">달밤의 배달
+                    <img src="{% static 'admin/img/logob.png'%}" style ="margin-left: -5%; margin-bottom: 1%;">
+                </a>
+                
+                <!-- <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
+                <!-- 흰색버튼삭제 -->
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse"></div>
+                    <a href="{% url 'location'%}" class="nav-location">영남대학교 IT관 <i class="far fa-check-circle"style="color:#000000; font-weight:bold;"></i></a>
+                    <a href="{% url 'login'%}" class="nav-link"><i class="fas fa-user-circle" style="color:#000000; font-size:40px;" ></i></a>
+                    
+                </div>
+            </div>
+        
+
+        <!-- Nav Bar End -->
+
+    <div class = "form-wrap">
+    <div id="content"></div>
+
+    <div class="card_market">
+        <div class="card-header"><b>장바구니</b></div>
+        <div id="card-main">
+            <!-- auto added -->
+
+
+        </div>
+        <div class="card-footer " style="text-align: right; color: rgb(75, 75, 75);">
+            <b id='total'>합계: 0원</b>    
+        </div>
+        <!-- <div class="page-wrapper" >
+            <a class="btn trigger" href="#">결제하기</a>
+        </div> -->
+      </div>
+      
+
+    <ul class="mylist">
+        
+        <div class="card" style= "width: 70%;  float:left; padding:px;" >
+            <div class="card-body" >
+                <img src="https://scontent-gmp1-1.xx.fbcdn.net/v/t1.6435-9/113631685_1553877141461892_6668198970832213370_n.png?_nc_cat=106&ccb=1-3&_nc_sid=973b4a&_nc_ohc=aBOeBXEmxWkAX8fBhC9&_nc_ht=scontent-gmp1-1.xx&oh=2c8886d3cfb38da5318752cf96b1fd8a&oe=60E061FD" border="1" align="left" vspace="10" hspace="10"class="img-fluid" style="max-width:110px; height:auto;border-radius: 5px;border-color: rgb(177, 177, 177); margin: 0px 10px 0px 2px;">
+                <div class="card-market" style="float: left;"><b>한솥도시락 영남대원룸촌점</b></div>
+                <img src="{% static 'admin/img/pin.png'%}" class="img-fluid" align="right" style="max-width: 23px; height:auto; ">
+                <div class="card-time" style="float: right;">18:00 영남대 기숙사 </div>
+                <br>
+                <img src="{% static 'admin/img/star.png'%}" vspace="1" hspace="1" align="left" class="img-fluid" style="max-width:16px; height:auto;">
+                <div style="float:left; font-size: 13px;"><b>4.9 </b>최근리뷰 265 | 최근사장님댓글 139</div>
+                <img src="https://cdn.pixabay.com/photo/2014/04/02/10/54/man-304880_1280.png" class="img-fluid" align="right" hspace="8" style="max-width: 14px; height:auto;">
+                <div class="card-text " style="float:right; font-size: 13px;">소요 거리: 223m </div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>남은시간</b> 10분</div>
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>최소주문금액 </b>5700원/8000원</div>
+
+                <br>
+                <div class="card-text " style="float:left; font-size: 13px;"><b>배달팁 </b>3000원 <i class="fas fa-arrow-right" sy></i> 1500원</div>
+                <div class="card-text " style="float:right; font-size: 15px;">1명/2명  </div>
+            </div>
+        </div>
+
+
+        <!--메뉴-정보-리뷰-->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            //When page loads...
+            $(".tab_content").hide(); //Hide all content
+            $("ul.tabs li:first").addClass("active").show(); //Activate first tab
+            $(".tab_content:first").show(); //Show first tab content
+
+            //On Click Event
+            $("ul.tabs li").click(function() {
+
+                $("ul.tabs li").removeClass("active"); //Remove any "active" class
+                $(this).addClass("active"); //Add "active" class to selected tab
+                $(".tab_content").hide(); //Hide all tab content
+
+                var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+                $(activeTab).fadeIn(); //Fade in the active ID content
+                return false;
+            });
+
+        });
+    </script>
+
+<div id="wrapper">    
+    <!--탭 메뉴 영역 -->
+    <ul class="tabs">
+        <li><a href="#tab1">메뉴</a></li>
+        <li><a href="#tab2">정보</a></li>
+        <li><a href="#tab3">리뷰</a></li>
+    </ul>
+
+    <!--탭 콘텐츠 영역 -->
+    <div class="tab_container">
+
+        <div id="tab1" class="tab_content" style="padding: 0%;">
+            <!--Content-->
+            <br>
+            <p style="padding: 3%;">
+                # 음료수 주문 팁<br>
+                <b>- 나눠서 배달할 경우 요청사항에 기재해주시면 작은걸로 나눠드려요.</b><br>
+                - 콜라, 사이다(250ml)는 서비스 차원에서 355ml 큰것으로 드려요<br>
+                - 마운틴듀는 같은 용량의 웰치스, 스파클링, 밀키스, 립톤으로 교체 가능(요청사항에 기재해주세요)<br>
+                <br>
+                소문난<br>
+                한솥 영남대원룸촌점<br>
+                053-818-4937<br>
+            </p>
+            <div class="card" style="width: 100%;">
+                <div class="card-body" onclick='btn_click()' id='hansot'>
+                    <img src="https://www.hsd.co.kr/images/ed481903392c4eea9781ac36340e1e5a20201231100927.jpeg" align="right" class="img-fluid" style="max-width:90px; height:auto; border-radius: 5px; border-color: rgb(177, 177, 177);">
+                    <div class="menu-market"><b id='hansot_sub'>(BEST)숯불직화구이 덮밥</b></div>
+                    <p class="menu-explain">덮밥용 소이소스+리유소스</p>
+                    <br>
+                    <div class="menu-money" id='hansot_price' value='5700'>5,700원</div>
+                </div>
+            </div>
+            <div class="card" style="width: 100%;" >
+                <div class="card-body" id='chicken' onclick="btn_click()">
+                    <img src="https://www.hsd.co.kr/images/2a96c307d83a427b9e977b4b01c97a9b20180905101713.jpg" align="right" class="img-fluid" style="max-width:90px; height:auto; border-radius: 5px; border-color: rgb(177, 177, 177);">
+                    <div class="menu-market"><b id='chicken_sub'>치킨마요</b></div>
+                    <p class="menu-explain">커플소스 + 조미김</p>
+                    <br>
+                    <div class="menu-money" id='chicken_price'>2,900원</div>
+                </div>
+            </div>
+            <div class="card" style="width: 100%;" >
+                <div class="card-body" id='tuna' onclick="btn_click()">
+                    <img src="https://www.hsd.co.kr/images/2bcb2927e48d4045b30404f9197872cb20180905101637.jpg" align="right" class="img-fluid" style="max-width:90px; height:auto; border-radius: 5px; border-color: rgb(177, 177, 177);">
+                    <div class="menu-market"><b id='tuna_sub'>참치마요</b></div>
+                    <p class="menu-explain">커플소스 + 조미김</p>
+                    <br>
+                    <div class="menu-money" id='tuna_price'>2,900원</div>
+                </div>
+            </div>
+            <div class="card" style="width: 100%;">
+                <div class="card-body" id='spam' onclick='btn_click()'>
+                    <img src="https://www.hsd.co.kr/images/265876b1ff6043f7b63973e1a0a6b87320200701092306.jpg" align="right" class="img-fluid" style="max-width:90px; height:auto; border-radius: 5px; border-color: rgb(177, 177, 177);">
+                    <div class="menu-market"><b id='spam_sub'>(BEST)메가스팸마요</b></div>
+                    <p class="menu-explain">커플소스 2개 + 조미김 1개</p>
+                    <br>
+                    <div class="menu-money" id='spam_price'>5,300원</div>
+                </div>
+            </div>
+            <div class="card" style="width: 100%;">
+                <div class="card-body" id='spamma' onclick='btn_click()'>
+                    <img src="https://www.hsd.co.kr/images/0e34cdb4e54b401fb7266c1574508d5720200701093535.jpg" align="right" class="img-fluid" style="max-width:90px; height:auto; border-radius: 5px; border-color: rgb(177, 177, 177);">
+                    <div class="menu-market"><b id='spamma_sub'>스팸마요</b></div>
+                    <p class="menu-explain" >커플소스 1개 + 조미김 1개</p>
+                    <br>
+                    <div class="menu-money" id='spamma_price'>3,500원</div>
+                </div>
+            </div>
+            <div class="card" style="width: 100%;">
+                <div class="card-body" id='donchi' onclick='btn_click()'>
+                    <img src="https://www.hsd.co.kr/images/defd7ab6348a4a85a1c6c93c19c9cd0c20180905101550.jpg" align="right" class="img-fluid" style="max-width:90px; height:auto; border-radius: 5px; border-color: rgb(177, 177, 177);">
+                    <div class="menu-market"><b id='donchi_sub'>돈치마요</b></div>
+                    <p class="menu-explain">빅커플소스 + 조미김</p>
+                    <br>
+                    <div class="menu-money" id='donchi_price'>3,500원</div>
+                </div>
+            </div>
+            <div class="card" style="width: 100%;">
+                <div class="card-body" id='kimchi' onclick='btn_click()'>
+                    <img src="https://www.hsd.co.kr/images/fdbc25e744d64e37a14747053d96425420201016081559.jpg" align="right" class="img-fluid" style="max-width:90px; height:auto; border-radius: 5px; border-color: rgb(177, 177, 177);">
+                    <div class="menu-market"><b id='kimchi_sub'>김치볶음밥</b></div>
+                    <p class="menu-explain" >계란후라이 + 조미김</p>
+                    <br>
+                    <div class="menu-money" id='kimchi_price'>3,700원</div>
+                </div>
+            </div>
+            <div class="card" style="width: 100%;">
+                <div class="card-body" id='spamkimchi' onclick='btn_click()'>
+                    <img src="https://www.hsd.co.kr/images/e42b50f4cf3442559ee17e50749e2ab320200701094014.jpg" align="right" class="img-fluid" style="max-width:90px; height:auto; border-radius: 5px; border-color: rgb(177, 177, 177);">
+                    <div class="menu-market"><b id='spamkimchi_sub'>스팸김치볶음밥</b></div>
+                    <p class="menu-explain">계란후라이 + 조미김 + 스팸 1조각</p>
+                    <br>
+                    <div class="menu-money" id='spamkimchi_price'>4,500원</div>
+                </div>
+            </div>
+            <div class="card" style="width: 100%;">
+                <div class="card-body" id='chee' onclick='btn_click()'>
+                    <img src="https://www.hsd.co.kr/images/880cfd09946246de8d1fc85da88a380220201016082031.jpg" align="right" class="img-fluid" style="max-width:90px; height:auto; border-radius: 5px; border-color: rgb(177, 177, 177);">
+                    <div class="menu-market"><b id='chee_sub'>3종 치즈 김치볶음밥</b></div>
+                    <p class="menu-explain">계란후라이 + 조미김 + 치즈토핑</p>
+                    <br>
+                    <div class="menu-money" id='chee_price'>4,700원</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab2" class="tab_content">
+           <!--Content-->
+           <b>가게 소개</b><br><br>
+           반갑습니다<br>
+           영남대학교 정문쪽에 위치한 한솥도시락 영남대원룸촌점입니다.<br>
+           <br>
+           한솥도시락은 take-out 전문점이었으나 주변 상황과 환경, 그리고 고객님의 니즈에 부합하기 위해 시대의 흐름에 따라 배달을 시작합니다.<br>
+           <br>
+           본사 직원 출신이 약 15년간의 노하우를 가지고 운영하는 점포로 위생관리 및 품질관리에 철저히 관리하고 있습니다.<br>
+           <br>
+           한솥과 함께 한 수많은 고객과 가맹점주들께서 칭찬과 함께 하시는 말씀이 있습니다. <br>
+           한솥은 참 착하다는 말입니다.<br>
+           <br>
+           고맙습니다.<br>
+           한솥 한 그릇으로 우정을 나누고, 사랑을 키울 수 있기를 바라는 한솥의 마음이 더 따뜻해집니다. <br>
+           따끈한 한 끼로 세상의 온기가 되겠다는 초심, 결코 잃지 않겠습니다.<br>
+           <br>
+           감사합니다.<br>
+           <br>
+           소문난<br>
+           한솥 영남대원룸촌점<br>
+           053-818-4937<br>
+           053-817-0044<br><br>
+           <hr style="height: 5px;">
+           <b>영업정보</b><br><br>
+           <table style="width: 100%;">
+            <thead>
+                <tr>
+                  <th></th><th></th>
+                </tr>
+              </thead>
+            <tbody >
+              <tr>
+                <td>상호명</td><td>한솥도시락 영남대원룸촌점</td>
+              </tr>
+              <tr>
+                <td>운영시간</td><td>매일 - 오전 9:30 ~ 오후 8:30</td>
+              </tr>
+              <tr>
+                <td>휴무일</td><td>연중무휴</td>
+              </tr>
+              <tr>
+                <td>전화번호</td><td>050-4821-7070<br>050번은 달밤의배달에서 제공하는 번호입니다.</td>
+              </tr>
+              <tr>
+                <td>배달지역</td><td>경산전지역</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="tab3" class="tab_content">
+            <!--Content-->
+            <p class="make-review">리뷰 작성</p>
+            <br>
+            <p style="text-align:center; font-size: 18px">총 1,707개의 리뷰가 작성되었습니다.</p>
+         </div>
+
+         
+        <!-- Button -->
+        
+        <div class="page-wrapper">
+            <a class="btn trigger" href="#">결제하기</a>
+        </div>
+        <!-- Modal -->
+        <div class="modal-wrapper">
+            <div class="modal">
+            <div class="head">
+                <a class="btn-close trigger" href="#">
+                <!-- <i class="fa fa-times" aria-hidden="true" ></i> -->
+                </a>
+            </div>
+            <div class="content">
+
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    <div class="popup-moon"><b>달밤의 배달</b><img src="{% static 'admin/img/logo.png'%}" style="width: 10%; height: auto;"></div>
+                    <hr style="height: 2px; margin-top: 5px; color: #5c5c5c;"> 
+                    <hr style="height: 4px; margin-top: -16px; color: #bebebe;">
+                    <div class="popup-market"><b>한솥도시락 영남대원룸촌점</b></div>
+                    <div class="popup-money"style="float: left;"> 상품 금액</div>
+                    <div class="popup-money"style="float: right;" id='pay'><b>8,200원</b></div>
+                    <br>
+                    <div class="popup-money"style="float: left;"> 배달팁</div>
+                    <div class="popup-money"style="float: right;"><b>1,500원</b></div>
+                    <br>
+                    <hr style="height: 1px;  color: #5c5c5c; ">
+                    <div class="popup-title"style="float: left;"> 이용약관 동의</div>
+                    <div class="popup-money"style="float: right;"><i class="fas fa-check-square"></i> 전체 동의</div>
+                    <br>
+                    <hr style="height: 1px;  color: #5c5c5c;">
+                    <div class="popup-title"style="float: left;"> 쿠폰선택</div>
+                    <div class="popup-money"style="float: right;">없음</i> </div>
+                    <br>
+                    <hr style="height: 1px;  color: #5c5c5c;">
+                    <!-- <img src="method.PNG"> -->
+                    <div class="card" style="width: 59.8%; height:140px; float:left">
+                        <div class="card-body" onclick='payment()' >
+                            <img src="http://wiki.hash.kr/images/thumb/f/ff/%ED%8E%98%EC%9D%B4%EC%BD%94_%EA%B8%80%EC%9E%90.png/450px-%ED%8E%98%EC%9D%B4%EC%BD%94_%EA%B8%80%EC%9E%90.png" style="width:60%; height: auto; float:left;" value='payco'>
+                           <p class="explain" style="font-size: 13px; text-align: left;">
+                               <br><br>첫결제 3,500원 할인<br>
+                               페이코 충전포인트 3% 즉시 할인
+                           </p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 40%; height:140px; float: left;">
+                        <div class="card-body">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Samsung-Pay-Logo.jpg" style="width:90%; height: auto; float:left;">
+                            <p class="explain" style="font-size: 13px; text-align: left;">
+                               <br><br>간편하게<br>삼성페이로<br><br>
+                           </p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 33.3%; height: 50px; float: left;">
+                        <div class="card-body">
+                            <p class="explain" style="font-size: 14px; text-align: left;">
+                               <b>삼성</b>
+                           </p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 33.3%; height: 50px; float: left;">
+                        <div class="card-body">
+                            <p class="explain" style="font-size: 14px; text-align: left;">
+                               <b>신한</b>
+                           </p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 33.3%; height: 50px; float: left;">
+                        <div class="card-body">
+                            <p class="explain" style="font-size: 14px; text-align: left;">
+                               <b>하나</b>
+                           </p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 33.3%; height: 50px; float: left;">
+                        <div class="card-body">
+                            <p class="explain" style="font-size: 14px; text-align: left;">
+                               <b>NH농협</b>
+                           </p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 33.3%; height: 50px; float: left;">
+                        <div class="card-body">
+                            <p class="explain" style="font-size: 14px; text-align: left;">
+                               <b>삼성앱카드</b>
+                           </p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 33.3%; height: 50px; float: left;">
+                        <div class="card-body">
+                            <p class="explain" style="font-size: 14px; text-align: left;">
+                              <b>그 외 </b>> 
+                           </p>
+                        </div>
+                    </div>
+                    <br>
+                    <p id='final_payment'><a class="btn bttn own_trigger" href='#' onclick='transition()'>9,700원 결제하기</a></p>
+            </div>
+            </div>
+        </div>
+        <!-- 주문완료 -->
+        <div class="modal_wrapper_final">
+            <div class="modal_final">
+                <div class="head">
+                    <a class="btn-close final_close" href="#"></a>
+                </div>
+                <div class="content">
+
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    <div class="popup-moon"><b>달밤의 배달</b><img src="{% static 'admin/img/logo.png'%}" style="width: 10%; height: auto;"></div>
+                    <hr style="height: 2px; margin-top: 5px; color: #5c5c5c;"> 
+                    <hr style="height: 4px; margin-top: -16px; color: #bebebe;">
+                    <div class="popup-market"><b >주문 완료</b></div><br>
+                    <div class="popup-money"style="float: left;"> 배달 시간</div>
+                    <div class="popup-money"style="float: right;"><b>18:00</b></div>
+                    <br>
+                    <div class="popup-money"style="float: left;"> 배달 장소</div>
+                    <div class="popup-money"style="float: right;"><b>영남대 기숙사</b></div>
+                    <br>
+                    <hr style="height: 1px;  color: #5c5c5c; ">
+                    <p><button class="btn bttn confirm" onclick="confirm_payment()">확인 완료</button></p>
+                </div>
+            </div>
+        </div>
+        <!-- partial -->
+        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script><script  src="{% static 'admin/js/script.js'%}"></script>
+        
+</div>
+       
+    </ul>
+    </div>
+            <!-- JavaScript Libraries -->
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+            <script src="{% static 'admin/js/easing.min.js'%}"></script>
+            <script src="{% static 'admin/js/owl.carousel.min.js'%}"></script>
+            <script src="{% static 'admin/js/waypoints.min.js'%}"></script>
+            <script src="{% static 'admin/js/counterup.min.js'%}"></script>
+            
+
+    
+            <!-- Template Javascript -->
+            <script src="{% static 'admin/js/main.js'%}"></script>
+
+            <script>
+                function payment()
+                {
+                    event.target.classList.toggle('payment_back');
+                }
+                function btn_click()
+                {
+                    var word=document.getElementById(event.target.id+'_sub').innerHTML;
+                    var price=document.getElementById(event.target.id+'_price').getAttribute('value');
+                    var price_html=document.getElementById(event.target.id+'_price').innerHTML;
+                    var total_element=document.getElementById('total');
+                    var total_price=total_element.innerHTML.replace(/[^0-9]/g,'');
+                    var final_payment=document.getElementById('final_payment');
+                    total_price=Number(total_price);
+                    var real_price=price_html.replace(/[^0-9]/g,'');
+                    real_price=Number(real_price);
+                    var element=document.getElementById('card-main');
+                    var pay_reflect=document.getElementById('pay');
+                    element.innerHTML+='<div class="buy-list">'+
+                                '<div class="buy-menu">'+word+'</div>'+
+                                '<img src="http://pngimg.com/uploads/plus/plus_PNG95.png" align="left" class="img-fluid" hspace="2" style="max-width: 15px; height:auto; margin-top: 2.5px; ">'+
+                                '<div class="buy-charge"><b>'+price_html+'</b></div>'+
+                                '<div class="num-button" style="float: right">'+
+                                '<input type="text" name="pop_out" value="+" readonly="readonly" style="text-align:center; width:20px; height: 20px; font-weight: bold;"/>'+
+                                '<input type="text" name="pop_out" value="1" readonly="readonly" style="text-align:center; width:20px; height: 20px;"/>'+
+                                '<input type="text" name="pop_out" value="-" readonly="readonly" style="text-align:center; width:20px; height: 20px;font-weight: bold;"/>'+
+                                '</div>'+
+                                '</div><hr>'
+                    total_price+=real_price;
+                    var total_price_str=String(total_price);
+                    var final_price=total_price+1500;
+                    var final_price_str=String(final_price);
+                    if(parseInt(total_price/1000)!=0)
+                    {
+                        
+                        var tmp=total_price_str.split('').reverse().join('');
+                        tmp=tmp.slice(0,3)+','+tmp.slice(3,tmp.length);
+                        total_price_str=tmp.split('').reverse().join('');
+                    }
+                    
+                    if(parseInt(final_price/1000)!=0)
+                    {
+                        
+                        var tmp=final_price_str.split('').reverse().join('');
+                        tmp=tmp.slice(0,3)+','+tmp.slice(3,tmp.length);
+                        final_price_str=tmp.split('').reverse().join('');
+                       
+                    }
+                    total_element.innerHTML='<b>합계 : '+total_price_str+'원</b>';
+                    pay_reflect.innerHTML='<b>'+total_price_str+'원</b>';
+                    final_payment.innerHTML='<button class="btn bttn own_trigger">'+final_price_str+'원 결제하기</button>';
+                    
+                    
+                }
+                // function final()
+                // {
+                //     alert('btn clicked');
+                //     $('.modal-wrapper').toggleClass('open');
+                //     $('.modal-wrapper-final').toggleClass('opena'); 
+                // }
+                function confirm_payment()
+                {
+                    location.replace("{% url 'mainmenu'%}");
+                }
+            </script>
+   </div>
+</body>
+
+</html>

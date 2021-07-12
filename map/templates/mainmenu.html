@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="{% static 'admin/css/animate.min.css'%}" rel="stylesheet">
+    <link href="{% static 'admin/css/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>mainmenu</title>
+    <link rel="stylesheet" href="{% static 'admin/css/mainmenu_style.css'%}">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Khula:400,700');
+
+    </style>
+    <script language='javascript'>
+        function loaded()
+        {
+            document.all.loading.style.display='none';
+            document.all.wrap.style.display='block';
+        }
+    </script>
+</head>
+<body class="page" onload='loaded()'>
+    <!-- loading -->
+    <div id="loading" runat="server" style="position:absolute;left:50%;top:50%;margin-top:-140px;margin-left:-250px;DISPLAY: block;text-align:center;">
+        <img src="{% static 'admin/gif/load.gif'%}" width="500" height="250" border="0">
+        <br><br>
+        
+    </div>
+    <div id="wrap" runat="server" style="DISPLAY:none">
+        <!-- Nav Bar Start -->
+
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="{% url 'mainmenu'%}" class="navbar-brand">달밤의 배달
+                    <img src="{% static 'admin/img/logob.png'%}" style ="margin-left: -5%; margin-bottom: 1%;">
+                </a>
+                <!-- <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
+                <!-- 흰색버튼 -->
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse"></div>
+                    <a href="{% url 'location'%}" class="nav-location">영남대학교 IT관 <i class="far fa-check-circle"style="color:#000000; font-weight:bold;"></i></a>
+                    <a href="{% url 'login'%}" class="nav-link"><i class="fas fa-user-circle" style="color:#000000; font-size:40px;" ></i></a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Nav Bar End -->
+        <div class = "form-wrap">
+            <div id="content"></div>
+                <script src="{% static 'admin/js/buttonstrip.min.js'%}"></script>
+                <script>
+                    var bs1 = new ButtonStrip({
+                        id: 'buttonStrip1'
+                    });
+                    bs1.addButton('여럿이서', true, 'click', function(){
+                        console.log('Hallo Welt!');
+                    });
+                    bs1.addButton('혼자서', false, 'click', function(){
+                        console.log('Test');
+                    });
+                    bs1.append('#content');
+                </script>
+                <br>
+            <div class="new-menu" onclick="make_own()">내가 만들기</div>
+
+
+        <div id="map"></div>  
+
+        <br>
+        <div class="container" >
+            <div class="button" ><img src="{% static 'admin/img/moon_rabbit.png'%}" style="text-align:center; width: 100%; height: 100%"></div>    
+            <div class="button" onclick="button_click()" ><img src="{% static 'admin/img/korea.png'%}" style="text-align:center; width: 100%; height: 100%" id='korea'></div>
+            <div class="button" ><img src="{% static 'admin/img/snack.png'%}" style="text-align:center; width: 100%; height: 100%"></div>
+            <div class="button" ><img src="{% static 'admin/img/japan.png'%}" style="text-align:center; width: 100%; height: 100%"></div>
+
+        </div>
+        <div class="container">
+            <div class="button" ><img src="{% static 'admin/img/china.png'%}" style="text-align:center; width: 100%; height: 100%"></div>
+            <div class="button" ><img src="{% static 'admin/img/western.png'%}" style="text-align:center; width: 100%; height: 100%"></div>
+            <div class="button" onclick="button_click()" ><img src="{% static 'admin/img/chicken.png'%}" style="text-align:center; width: 100%; height: 100%" id='chicken'></div>
+            <div class="button" ><img src="{% static 'admin/img/pizza.png'%}" style="text-align:center; width: 100%; height: 100%"></div>
+
+        </div>
+        <div class="container">
+            <div class="button" ><img src="{% static 'admin/img/night.png'%}" style="text-align:center; width: 100%; height: 100%"></div>
+            <div class="button" ><img src="{% static 'admin/img/soup.png'%}" style="text-align:center; width: 100%; height: 100%"></div>
+            <div class="button" ><img src="{% static 'admin/img/box.png'%}" style="text-align:center; width: 100%; height: 100%"></div>
+            <div class="button" ><img src="{% static 'admin/img/dessert.png'%}" style="text-align:center; width: 100%; height: 100%"></div>
+
+        </div>
+        <br><br>
+
+            <img src="{% static 'admin/img/add.jpg'%}" class="img-fluid" style="    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2), 0 2px 5px 0 rgba(0,0,0,0.19);
+            max-width:100%; height:auto;">
+ 
+
+
+            <!-- JavaScript Libraries -->
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+            <script src="{% static 'admin/js/easing.min.js'%}"></script>
+            <script src="{% static 'admin/js/owl.carousel.min.js'%}"></script>
+            <script src="{% static 'admin/js/waypoints.min.js'%}"></script>
+            <script src="{% static 'admin/js/counterup.min.js'%}"></script>
+            
+
+            <!-- Template Javascript -->
+            <script src="{% static 'admin/js/main.js'%}"></script>
+
+            <!-- kakao map api -->
+            <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6bd54180018d8f7825791aa6f9ebb0aa&libraries=services"></script>
+        <script>
+            // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
+            var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+            var myposImg="{% static 'admin/img/mypos.png'%}";
+            var deliverImg="{% static 'admin/img/deliverpos.png'%}";
+            var centerPos=new kakao.maps.LatLng(37.566826, 126.9786567);
+            var userLevel=5;
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                mapOption = 
+                {
+                    center: centerPos, // 지도의 중심좌표
+                    level: userLevel // 지도의 확대 레벨
+                };  
+            // 지도를 생성합니다    
+            var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+            //marking infomation
+            var keyWord=['영남대역 2번출구','영남대학교 기숙사','영남대학교 기계관','영남대학교 천마아트센터','영남대학교 상경관','영남대학교 중앙도서관','영남대학교 과학도서관','경산임당호반베르디움','영남대학교 화공관','영남대학교 정보통신연구소'
+                            ,'영남대학교 대학본부본관','영남대학교 로봇관','경산 서요양병원','cu 영남대서문점','영남대학교 인문관'];
+            var ps = new kakao.maps.services.Places(); 
+            ps.keywordSearch('영남대학교 it관',setCenterPos);
+
+            var zoomControl=new kakao.maps.ZoomControl();
+            map.addControl(zoomControl,kakao.maps.ControlPosition.RIGHT);   
+
+            function setCenterPos(data, status, pagination)
+            {
+                if(status==kakao.maps.services.Status.OK)
+                {
+                    var pos=new kakao.maps.LatLng(data[0].y, data[0].x);
+                    map.setCenter(pos);
+                    //alert("여기까지 했음");
+                    displayMarker(data[0],false);
+                    
+                    //makeMark(keyWord);
+                }
+            }
+            function markeyword(data, status, pagination)
+            {
+                if(status==kakao.maps.services.Status.OK)
+                {
+                    var pos=new kakao.maps.LatLng(data[0].y, data[0].x);
+                    displayMarker(data[0],true);
+                }
+            }
+            
+            function makeMark(key)
+            {
+                for(var i=0;i<key.length;i++)
+                {
+                    //alert('진입');
+                    ps.keywordSearch(key[i],markeyword);
+                    
+                }
+              
+          
+            }
+            // 지도에 마커를 표시하는 함수입니다
+            function displayMarker(place,flag) 
+            {
+                
+                // 마커를 생성하고 지도에 표시합니다
+                var marker = new kakao.maps.Marker({
+                    map: map,
+                    //position: new kakao.maps.LatLng(place.y, place.x) 
+                });
+                
+                if(flag)
+                {
+                    var markerImage = new kakao.maps.MarkerImage(deliverImg,new kakao.maps.Size(31, 35), new kakao.maps.Point(13, 34));
+                    marker.setImage(markerImage);
+                    
+                }
+                else
+                { 
+                    var markerImage = new kakao.maps.MarkerImage(myposImg,new kakao.maps.Size(31, 35), new kakao.maps.Point(13, 34));
+                    marker.setImage(markerImage);
+                }
+                marker.setPosition(new kakao.maps.LatLng(place.y, place.x) );
+                
+                // 마커에 클릭이벤트를 등록합니다
+                kakao.maps.event.addListener(marker, 'click', function() 
+                {
+                    // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+                    infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+                    infowindow.open(map, marker);
+                });
+            }
+            </script>
+    </div>
+</body>
+    <script>
+        function button_click() {
+            event.target.classList.toggle("active");
+            //event.target.
+            if(event.target.id=='korea')
+            {
+                location.href="{% url 'main'%}";
+            }
+            else
+            {
+                location.href="{% url 'mymenu'%}";
+            }
+           
+            
+            
+        }
+        function make_own()
+        {
+            //alert('hello');
+            event.target.classList.toggle("make_own");
+            
+        }
+    </script>
+
+</html>

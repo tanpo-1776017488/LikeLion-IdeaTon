@@ -1,0 +1,401 @@
+.card{width:90%; text-align:center; margin:0px auto;    box-shadow: 0 3px 7px 0 rgba(0,0,0,0.2), 0 2px 5px 0 rgba(0,0,0,0.19);}
+
+.container{width:70%; text-align:center; margin:0px auto;}
+
+.form-wrap {
+    width: 900px;
+    position: relative;
+    margin: 3% auto 0% auto;
+    background: #fff;
+    padding: 10px;
+    overflow: hidden;
+    padding: 45px 0 15px 0;
+    box-shadow: 0 0 100px 9px rgb(214, 214, 214);
+}
+
+
+
+/**********************************/
+/*********** Nav Bar CSS **********/
+/**********************************/
+.navbar {
+    position: relative;
+    transition: .5s;
+    z-index: 999;
+}
+
+.navbar.nav-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    transition: .5s;
+}
+
+.navbar .navbar-brand {
+    margin: 0;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    line-height: 0px;
+    font-weight: 1000;
+    text-transform: uppercase;
+
+}
+
+.navbar .navbar-brand img {
+    max-width: 100%;
+    max-height: 40px;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    padding: 5px 0px 5px 10px;
+    color: #000000;
+    height: 10;
+
+}
+.nav-location
+{  
+    width: 50%;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    line-height: 0px;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+}
+
+
+.navbar .dropdown-menu {
+    margin-top: 0;
+    border: 0;
+    border-radius: 0;
+    background: #f8f9fa;
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        position: absolute;
+        width: 100%;
+        top: 0px;
+        padding: 3px 40px;
+        background: rgba(0, 0, 0, 0.2)!important;
+        z-index: 9;
+    }
+    
+    .navbar.nav-sticky {
+        padding: 3px 40px;
+        background: #ffd904 !important;
+    }
+    
+    .page .navbar {
+        background: #ffd904 !important;
+    }
+    
+
+}
+
+@media (max-width: 991.98px) {   
+    .navbar {
+        padding: px;
+        background: #ffd904 !important;
+    }
+    
+
+    
+    .navbar .dropdown-menu {
+        box-shadow: none;
+    }
+}
+
+ /*TAB CSS*/
+
+ ul.tabs {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+    height: 35px; /*--Set height of tabs--*/
+    border-left: 1px solid #ccc;
+    width: 70%;
+    font-weight: bold;
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,0.2), 0 2px 5px 0 rgba(0,0,0,0.19);
+}
+ul.tabs li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: 35px; /*--Subtract 1px from the height of the unordered list--*/
+    line-height: 33px; /*--Vertically aligns the text within the tab--*/
+    border: 1.6px solid #ccc;
+    border-left: none;
+    margin-bottom: -1px; /*--Pull the list item down 1px--*/
+    overflow: hidden;
+    position: relative;
+    background: #f1f1f1;
+}
+ul.tabs li a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    font-size: 1em;
+    padding: 0 84.2px;
+}
+ul.tabs li a:hover {
+    background: #ccc;
+    border-bottom: 1px solid #fff;
+}
+html ul.tabs li.active, html ul.tabs li.active a:hover  {
+     /*--Makes sure that the active tab does not listen to the hover properties--*/
+    background: #fff;
+    /*--Makes the active tab look like it's connected with its content--*/
+    border-bottom: 1px solid #fff; 
+}
+
+.goob-job .card.active{
+  background-color: #f1f1f1;
+}
+.payment_back
+{
+  background-color: #f1f1f1;
+}
+
+/*Tab Conent CSS*/
+.tab_container {
+    border: 1px solid #ccc;
+    border-top: none;
+    overflow: hidden;
+    clear: both;
+    float: left; 
+    width: 70%;
+    background: #fff;
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,0.2), 0 2px 5px 0 rgba(0,0,0,0.19);
+}
+.tab_content {
+    padding: 30px;
+}
+.make-review{
+    float: right;
+    color: #000000;
+    font-weight: bold;
+}
+
+.menu-market{
+    font-size: 17px;
+    text-align: left;
+}
+
+.menu-explain{
+    text-align: left;
+    color: rgba(105, 105, 105, 0.747);
+    font-size: 14px;
+}
+
+.menu-money{
+    text-align: left;
+    font-weight: bold;
+    color: rgb(78, 78, 78);
+}
+
+.card:hover{
+    background-color: #f1f1f1;
+}
+
+.card_market {
+    width: 25%;                 /* Set width of cards */
+   /* Set up Border */
+    border-radius: 4px;           /* Slightly Curve edges */
+    position:absolute;
+    display: flex;
+    flex-direction:column;
+    top: 45px;
+    left: 650px;
+    /* background-color: black; */
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,0.2), 0 2px 5px 0 rgba(0,0,0,0.19);
+  }
+  
+  .card-header {
+    font-size: 16px;
+    border-bottom: 1px solid #ffd904;
+    background-color: #ffd904;
+    padding: 9px 15px;
+  }
+  
+  #card-main {
+    display: flex;              /* Children use Flexbox */
+    flex-direction: column;     /* Rotate Axis to Vertical */
+    padding: 5%;            /* Add padding to the top/bottom */
+  }
+
+  .buy-menu{
+      font-size: 13px;
+      font-weight: bold;
+  }
+  .buy-charge{
+      font-size: 13px;
+  }
+.btn
+{
+
+    width: 115%;
+    margin-left: -15px;
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,0.2), 0 2px 5px 0 rgba(0,0,0,0.19);
+}
+
+/* popup */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+
+.page-wrapper {
+  width: 100%;
+  height:100%;
+  background-size: cover;
+}
+
+.blur-it {
+  filter: blur(4px);
+}
+
+a.btn {
+  width: 224px;
+  padding: 6px 0;
+  position: absolute;
+  top: 24.5%;
+  left: 80.3%;
+  transform: translate(-25%, -80.3%);
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  border-radius: 0;
+  background: #ffc400;
+}
+
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  background: rgba(202, 202, 202, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+
+}
+.modal_wrapper_final{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  background: rgba(202, 202, 202, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+}
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+  
+}
+.modal_wrapper_final.on{
+  opacity: 1;
+  visibility: visible;
+}
+.modal {
+  width: 400px;
+  height: 700px;
+  display: block;
+  margin: 50% 0 0 -180px;
+  position: relative;
+  top: 40%; 
+  left: 50%;
+  background: #fff;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 3px 7px 0 rgba(0,0,0,0.2), 0 2px 5px 0 rgba(0,0,0,0.19);
+}
+.modal_final{
+  width: 400px;
+  height: auto;
+  display: block;
+  margin: 50% 0 0 -180px;
+  position: relative;
+  top: 40%; 
+  left: 50%;
+  background: #fff;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 3px 7px 0 rgba(0,0,0,0.2), 0 2px 5px 0 rgba(0,0,0,0.19);
+}
+
+.modal-wrapper.open .modal{
+  margin-top: -200px;
+  opacity: 1;
+}
+.modal_wrapper_final.on .modal_final{
+  margin-top: -200px;
+  opacity: 1;
+}
+.head { 
+  width: 100%;
+  height: 40px;
+  padding: 12px 30px;
+  overflow: hidden;
+  background: #ffdd6e;
+
+}
+
+.btn-close {
+  font-size: 10px;
+
+  display: block;
+  float: right;
+
+}
+
+.content {
+  padding: 2% 10% 2% 10%;
+}
+
+.popup-moon{
+  font-size: 22px;
+  text-align: left;
+}
+.popup-market{
+  font-size: 18px;
+  text-align: left;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.popup-money{
+  font-size: 15px;
+  text-align: left;
+}
+.popup-title{
+  font-size: 17px;
+  text-align: left;
+  color: #000;
+  font-weight: bold;
+}
+.bttn{
+  width: 99%;
+  height: 50px;
+  position: relative;
+  margin-left: 0px;
+  margin-top: 15px;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  color: rgb(20, 20, 20);
+  border-radius: 0;
+  background: #ffd904;
+}

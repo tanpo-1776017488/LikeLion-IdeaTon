@@ -1,0 +1,62 @@
+{% load static %}
+<html>
+    <head>
+        <title>로그인 / 회원가입</title>
+        <link rel="stylesheet" href="{% static 'admin/css/login_style.css'%}">
+        
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="form-wrap">
+                <div class="button-wrap">
+                    <div id="btn"></div>
+                    <button type="button" class="togglebtn" onclick="login()">로그인</button>
+                    <button type="button" class="togglebtn" onclick="register()">회원가입</button>
+                </div>
+                <img src="{% static 'admin/img/logo_login.png'%}" style ="width:50%; height: auto; margin:-5% 26% -7%;"> 
+                <div class="social-icons">
+                    <img src="{% static 'admin/img/ka.png'%}" alt="kakao">
+                    <img src="{% static 'admin/img/fb.png'%}" alt="facebook">
+                    <img src="{% static 'admin/img/tw.png'%}" alt="twitter">
+                    <img src="{% static 'admin/img/gl.png'%}" alt="google">
+                </div>
+                <form id="login" action="{% url 'location'%}" class="input-group" method="post">
+                    {% csrf_token %}
+                    <br><br><br><br><br>
+                    <input type="text" class="input-field" placeholder="아이디" required>
+                    <input type="password" class="input-field" placeholder="비밀번호" required>
+                    <input type="checkbox" class="checkbox1"><span>로그인 상태 유지</span>
+                    <input type="checkbox" class="checkbox2"><span>아이디 저장</span>
+                    <button class="submit">로그인</button>
+                </form>
+                <form id="register" action="{% url 'location' %}" class="input-group">
+                    <input type="text" class="input-field" placeholder="아이디" required>
+                    <input type="password" class="input-field" placeholder="비밀번호" required>
+                    <input type="password" class="input-field" placeholder="비밀번호 확인" required>
+                    <input type="checkbox" class="checkbox1"><span>이용 약관</span>
+                    <button class="submit">회원가입</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+            
+            
+            function login(){
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0";
+            }
+
+            function register(){
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+            }
+        </script>
+    </body>
+</html>
+
+

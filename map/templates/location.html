@@ -1,0 +1,51 @@
+{% load static %}
+<html>
+    <head>
+        <title>위치 설정</title>
+        <link rel="stylesheet" href="{% static 'admin/css/location_style.css'%}">
+        <script src="https://kit.fontawesome.com/8eb5905426.js" crossorigin="anonymous"></script>
+        <script language='javascript'>
+            function loaded()
+            {
+                document.all.loading.style.display='none';
+                document.all.blockwrap.style.display='block';
+            }
+        </script>
+    </head> 
+    <body onload='loaded()'>
+        <!-- loading -->
+        <div id="loading" runat="server" style="position:absolute;left:50%;top:50%;margin-top:-140px;margin-left:-250px;DISPLAY: block;text-align:center;">
+            <img src="{% static 'admin/gif/load.gif'%}" width="500" height="250" border="0">
+            <br><br>
+        </div>
+        <div id="blockwrap" runat="server" style="DISPLAY:none">
+        <div class="wrap">
+            <div class="form-wrap">
+                <div class="button-wrap"></div>
+                <div class="x"> <i class="fas fa-times"></i></div>
+                    <div class="search">
+                      <i class="fas fa-search"></i>
+                      <input type="search" class="input-search" placeholder="지번, 건물명, 도로명으로 검색" >
+                    </div>
+                    <div class="search">
+                        <form method='post' action="{% url 'mainmenu'%}">
+                            {% csrf_token %}
+                            <button type='submit' class="submit" autofocus ><i class="fas fa-map-marker-alt"></i> 현 위치로 주소 설정</button>
+                        </form>
+                        </div>
+                    <div class="remember">
+                        <span><input type="location" class="input-title"  placeholder="최근 주소" required></span>
+                        <input type="location" class="input-lo" placeholder="멋쟁이사자처럼 스페이스 세렝게티" required>
+                        <input type="text" class="input-field" placeholder="봉은사로 82길 13(삼성동)" required>
+                        <input type="location" class="input-lo" placeholder="영남대학교 IT관" required>
+                        <input type="text" class="input-field" placeholder="대학로 280 영남대학교 IT관" required>
+                        <input type="location" class="input-lo" placeholder="영남대역 3번출구" required>
+                        <input type="text" class="input-field" placeholder="대학로 275 영남대역 3번출구" required>
+                    </div>
+            </div>
+                
+        </div>
+        </div>
+    </div>
+    </body>
+</html>
