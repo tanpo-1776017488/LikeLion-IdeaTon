@@ -43,9 +43,8 @@
 * 아래 공간 삭제
 * pagination 구현
 * url 연결
-* javascript를 사용한 이벤트 제어
+* js와 jQuery를 사용한 이벤트 제어
 * kakao map api 사용   
-* 메뉴 선택 이벤트 추가(jQuery,js)    
 
 ## 발표 영상   
 https://www.youtube.com/watch?app=desktop&v=lQnrwgoIDS0&feature=youtu.be
