@@ -40,27 +40,27 @@
 
 
 ## results
-### login page
+* ### login page
 <img src='results/login.png'>   
 
-### location page    
+* ### location page    
 <img src='results/location.png'>   
 
-### mainmenu page   
+* ### mainmenu page   
 <img src='results/mainmenu.png'>   
 
-### main page     
+* ### main page     
 <img src='results/main.png'>   
 
-### menu selection page   
+* ### menu selection page   
 <img src='results/menulist.png'>   
 
-### 결제창   
+* ### 결제창   
 <img src='results/payment.png'>   
 
-### 내가 만들기   
+* ### 내가 만들기   
 <img src='results/make_menu.png'>   
 
-### 내가 만들기 결제창   
+* ### 내가 만들기 결제창   
 <img src='results/make_menu_payment.png'>   
 
