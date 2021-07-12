@@ -1,9 +1,14 @@
-# Like Lion IdeaTon ~7.4
+# Like Lion IdeaTon ~7.4    
 ## Idea
 * 1인가구가 증가함에 따라 배달수요도 1인가구가 중심이 되고 있음.
 * 대부분의 가게는 최소주문 금액 및 배달비를 요구하고 있음.
 * 1인가구 입장에서는 배달비가 부담스러움
-* 공동 목적지로 공동배달을 하면 배달비가 줄어들지 않을까?
+* 공동 목적지로 공동배달을 하면 배달비가 줄어들지 않을까?    
+
+## 역할    
+* nawon-jo : Design, Front-end, Leader.    
+* Dain-K   : Design, Front-end.   
+* tanpo    : Design modification, Git management, Front-end.   
 
 ## future plans   
 > 2021.6.24   
@@ -42,6 +47,8 @@
 * kakao map api 사용   
 * 메뉴 선택 이벤트 추가(jQuery,js)    
 
+## 발표 영상   
+https://www.youtube.com/watch?app=desktop&v=lQnrwgoIDS0&feature=youtu.be
 
 ## results
 * ### login page
@@ -66,5 +73,7 @@
 <img src='results/make_menu.png'>   
 
 * ### 내가 만들기 결제창   
-<img src='results/make_menu_payment.png'>   
+<img src='results/make_menu_payment.png'>    
+
+
 
