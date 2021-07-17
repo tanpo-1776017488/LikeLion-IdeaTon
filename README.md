@@ -43,7 +43,7 @@
 * 아래 공간 삭제
 * pagination 구현
 * url 연결
-* js와 jQuery를 사용한 이벤트 제어
+* js를 사용한 이벤트 제어
 * kakao map api 사용   
 
 ## 발표 영상   
